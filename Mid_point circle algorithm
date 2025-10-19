@@ -1,0 +1,53 @@
+import matplotlib.pyplot as plt
+
+def midpoint_circle(xc, yc, r):
+    x = 0
+    y = r
+    p = 1 - r
+    pts = []
+
+    def plot8(xc, yc, x, y):
+
+        pts.extend([
+            (xc + x, yc + y),
+            (xc - x, yc + y),
+            (xc + x, yc - y),
+            (xc - x, yc - y),
+            (xc + y, yc + x),
+            (xc - y, yc + x),
+            (xc + y, yc - x),
+            (xc - y, yc - x),
+        ])
+
+
+    while x < y:
+        x += 1
+        if p < 0:
+            p += 2 * x + 1
+        else:
+            y -= 1
+            p += 2 * x + 1 - 2 * y
+        plot8(xc, yc, x, y)
+
+
+    return pts
+
+
+
+xc = int(input("Enter circle center x-coordinate: "))
+yc = int(input("Enter circle center y-coordinate: "))
+r = int(input("Enter radius: "))
+
+
+points = midpoint_circle(xc, yc, r)
+
+
+xs, ys = zip(*points)
+plt.figure(figsize=(3, 3))
+plt.scatter(xs, ys, s=10, color="blue")
+plt.gca().set_aspect('equal', adjustable='box')
+plt.title(f"Mid-point Circle (center=({xc},{yc}), r={r})")
+plt.grid(True)
+plt.xlabel("X")
+plt.ylabel("Y")
+plt.show()

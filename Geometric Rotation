@@ -1,0 +1,60 @@
+from matplotlib import pyplot as plt
+import math
+
+def rotateTriangle():
+  xcoordinate = []
+  ycoordinate = []
+
+  x1 =5
+  y1 =10
+
+  x2=10
+  y2=15
+
+  x3=12
+  y3 =12
+
+
+  xcoordinate.append(x1)
+  xcoordinate.append(x2)
+  xcoordinate.append(x3)
+  xcoordinate.append(x1)
+  ycoordinate.append(y1)
+  ycoordinate.append(y2)
+  ycoordinate.append(y3)
+  ycoordinate.append(y1)
+
+
+  xcoordinateNew = []
+  ycoordinateNew = []
+
+  x4 = ((x1 *(math.cos(math.radians(30)))) - (y1 *(math.sin(math.radians(30)))))
+  y4 = ((x1 *(math.sin(math.radians(30)))) + (y1 *(math.cos(math.radians(30)))))
+
+  x5 = ((x2 *(math.cos(math.radians(30)))) - (y2 *(math.sin(math.radians(30)))))
+  y5 = ((x2 *(math.sin(math.radians(30)))) + (y2 *(math.cos(math.radians(30)))))
+
+
+  x6 = ((x3 *(math.cos(math.radians(30)))) - (y3 *(math.sin(math.radians(30)))))
+  y6 = ((x3 *(math.sin(math.radians(30)))) + (y3 *(math.cos(math.radians(30)))))
+
+
+  xcoordinateNew.append(x4)
+  xcoordinateNew.append(x5)
+  xcoordinateNew.append(x6)
+  xcoordinateNew.append(x4)
+  ycoordinateNew.append(y4)
+  ycoordinateNew.append(y5)
+  ycoordinateNew.append(y6)
+  ycoordinateNew.append(y4)
+
+
+
+  plt.plot(xcoordinate, ycoordinate, marker='o', markersize=3,markerfacecolor="red")
+  #plt.show()
+
+  plt.plot(xcoordinateNew, ycoordinateNew, marker='o', markersize=3,markerfacecolor="green")
+  plt.show()
+
+
+rotateTriangle()

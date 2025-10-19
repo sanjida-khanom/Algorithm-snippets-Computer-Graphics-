@@ -1,0 +1,42 @@
+from matplotlib import pyplot as plt
+
+
+def DDA(x0,y0,x1,y1):
+
+  dx=abs(x0-x1)
+  dy=abs(y0-y1)
+
+  max_steps=max(dx,dy);
+
+  xincrement=dx/max_steps
+  yincrement=dy/max_steps
+
+  x=float(x0)
+  y=float(y0)
+
+  xcoordinates=[]
+  ycoordinates=[]
+
+  for i in range(max_steps):
+
+    xcoordinates.append(x)
+    ycoordinates.append(y)
+
+    print("x:",x,end=" ")
+    print("y:",y,end="\n")
+
+    x= x + xincrement
+    y= y + yincrement
+
+  plt.plot(xcoordinates,ycoordinates,marker='o',markersize=3,markerfacecolor="red")
+  plt.show()
+
+print('Input first point coordinator')
+x0=int(input())
+y0=int(input())
+
+print('Input second point coordinator')
+x1=int(input())
+y1=int(input())
+
+DDA(x0,y0,x1,y1)

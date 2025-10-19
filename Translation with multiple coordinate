@@ -1,0 +1,57 @@
+from matplotlib import pyplot as plt
+
+def tanslateTriangle():
+  xcoordinate = []
+  ycoordinate = []
+
+  x1 =5
+  y1 =10
+
+  x2=10
+  y2=15
+
+  x3=12
+  y3 =12
+
+
+
+  xcoordinate.append(x1)
+  xcoordinate.append(x2)
+  xcoordinate.append(x3)
+  xcoordinate.append(x1)
+  ycoordinate.append(y1)
+  ycoordinate.append(y2)
+  ycoordinate.append(y3)
+  ycoordinate.append(y1)
+
+
+  xcoordinateNew = []
+  ycoordinateNew = []
+  #  Direction Vector V = 13I +7J
+  x4 = x1 + 13
+  x5 = x2 + 13
+  x6 = x3 + 13
+  y4 = y1 + 7
+  y5 = y2 + 7
+  y6 = y3 + 7
+
+  xcoordinateNew.append(x4)
+  xcoordinateNew.append(x5)
+  xcoordinateNew.append(x6)
+  xcoordinateNew.append(x4)
+  ycoordinateNew.append(y4)
+  ycoordinateNew.append(y5)
+  ycoordinateNew.append(y6)
+  ycoordinateNew.append(y4)
+
+
+
+  plt.plot(xcoordinate, ycoordinate, marker='o', markersize=3,markerfacecolor="red")
+
+  plt.plot(xcoordinateNew, ycoordinateNew, marker='o', markersize=3,markerfacecolor="green")
+  plt.show()
+
+
+
+
+tanslateTriangle()
